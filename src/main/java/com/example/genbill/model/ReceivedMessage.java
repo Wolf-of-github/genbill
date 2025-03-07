@@ -10,21 +10,23 @@ public class ReceivedMessage {
 
     @Id
     private String id;
-    private String received;
-    private Date time;
+    private String patientId; // Added patientId field
+    private Date time; // Time extracted from the message
+    private double billAmount; // The computed bill
 
-    public ReceivedMessage(String received, Date time) {
-        this.received = received;
+    public ReceivedMessage(String patientId, Date time, double billAmount) {
+        this.patientId = patientId;
         this.time = time;
+        this.billAmount = billAmount;
     }
 
     // Getters and setters
-    public String getReceived() {
-        return received;
+    public String getPatientId() {
+        return patientId;
     }
 
-    public void setReceived(String received) {
-        this.received = received;
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
     }
 
     public Date getTime() {
@@ -33,5 +35,13 @@ public class ReceivedMessage {
 
     public void setTime(Date time) {
         this.time = time;
+    }
+
+    public double getBillAmount() {
+        return billAmount;
+    }
+
+    public void setBillAmount(double billAmount) {
+        this.billAmount = billAmount;
     }
 }
